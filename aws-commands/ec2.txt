@@ -1,0 +1,7 @@
+To see running ec2 instances in table format:
+
+aws ec2 describe-instances --filters Name=instance-state-name,Values=running --query "Reservations[*].Instances[*].[InstanceId,InstanceType,PublicIpAddress,State.Name]" --output table
+
+To see running ec2 instances in text format:
+
+aws ec2 describe-instances --filters Name=instance-state-name,Values=running --query "Reservations[*].Instances[*].InstanceId" --output text
